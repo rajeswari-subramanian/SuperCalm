@@ -47,33 +47,25 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
     const classes = useStyles();
 
-
-
     return (
         <>
             <Navbar />
-            <div>
-                <img    style={{ display:"block",marginTop:"-70px"}}        
-                    
-                    //src="https://res.cloudinary.com/calm-com/image/upload/v1582139698/jasper-lake.jpg"
-                    //data-src="https://res.cloudinary.com/calm-com/image/upload/v1582139698/jasper-lake.jpg"
-                    // data-srcset="https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_300,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 300w,
-                    //  https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_400,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 400w, 
-                    //  https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_768,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 768w,
-                    //   https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_1024,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 1024w,
-                    //  https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_1440,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 1440w,
-                    //   https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_1920,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 1920w, 
-                    //   https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_2560,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 2560w, 
-                    //   https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_3840,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 3840w"
-                      alt="Jasper Lake" 
-                      srcset="https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_300,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 300w,
-                      https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_400,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 400w,
-                      https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_768,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 768w,
-                      https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_1024,dpr_auto,q_auto/v1582139698/jasper-lake.jpg 1024w,
-                       https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_1349,dpr_auto,q_auto/v1582139698/jasper-lake.jpg" 
-                    
-                    data-loaded="true"></img>
-               </div>         
+            <div style={{ position: "relative" }}>
+                <img style={{ display: "block", marginTop: "-70px" }}
+                    src="https://res.cloudinary.com/calm-com/image/upload/f_auto,c_scale,w_1349,dpr_auto,q_auto/v1582139698/jasper-lake.jpg"
+                    alt="Jasper Lake"></img>
+                <div style={{ display: "flex", position: "absolute", top: "280px", left: "15%", textAlign: "left", flexDirection: "column" }}>
+                    <p style={{ color: "white", fontSize: "49px" }}>Find Your Calm</p>
+                    <p style={{ color: "white", fontSize: "29px" }}>Sleep more. Stress less. Live better.</p>
+                    <div><button style={{
+                        fontSize: "18px",
+                        fontWeight: "bolder",
+                        padding: "10px 105px 10px 105px",
+                        color: "white",
+                        borderRadius: "25px",
+                    }} type="button" class="btn btn-primary rounded-pill">Get Started</button></div>
+                </div>
+            </div>
             <Footer />
         </>
     );
