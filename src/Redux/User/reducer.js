@@ -3,6 +3,7 @@ import { saveData, loadData, clearData } from "../LocalStorage";
 
 const initStore = {
     isUserAuth: loadData('isUserAuth') || false,
+    userName: "",
     isError: false,
 };
 const userReducer = (state = initStore, { type, payload }) => {
@@ -16,6 +17,7 @@ const userReducer = (state = initStore, { type, payload }) => {
             return {
                 ...state,
                 isUserAuth: true,
+                userName: payload
             };
         case USER_LOGIN_FAILURE:
             return {
