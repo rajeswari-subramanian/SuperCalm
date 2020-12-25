@@ -9,9 +9,9 @@ export default function Routes() {
         <>
             <Router>
                 <Switch>                   
-                    <Route path="/" render={(props) => <LandingPage {...props} />} />
+                    <Route path="/"  exact render={(props) => <LandingPage {...props} />} />
                     <Route path="/admin" render={(props) => <Admin {...props} />} />
-                    <Route path="/user" render={(props) => <User {...props} />} />
+                    <Route path="/user"  render={(props) => <User {...props} />} />                   
                     <Route>
                         <div style={{ color: "red" }}>Error 404</div>
                         <Link to="/">GO back Home</Link>
