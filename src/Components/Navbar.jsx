@@ -57,14 +57,6 @@ border: 3px solid white;
       background:rgb(0,0,0,0.2);
     }   
 `;
-// const NavRightCalmButton = styled.div`
-//   font-size: 20px;
-//   padding: 10px 20px 10px 20px;
-//   font-weight: bold;
-//   color: white;
-//   border-radius: 35px;
-//   border-color: white;
-// `;
 
 export default function Navbar(props) {
   const dispatch = useDispatch()
