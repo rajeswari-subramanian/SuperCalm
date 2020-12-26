@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT } from './actionTypes'
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT, USER_STATS_SHOW } from './actionTypes'
 
 const userLoginRequest = () => {
     return { type: USER_LOGIN_REQUEST };
@@ -25,11 +25,16 @@ const userLogout = payload => {
         payload
     };
 };
-
+const userStatsShow = () => {
+    return {
+        type: USER_STATS_SHOW,
+    };
+};
 export {
     userLoginRequest,
     userLoginSuccess,
     userLoginFailure,
-    userLogout
+    userLogout,
+    userStatsShow
 };
 
