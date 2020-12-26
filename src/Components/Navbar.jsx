@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { adminLoginSuccess } from '../Redux/Admin/action'
 import { userLoginSuccess } from '../Redux/User/action'
 import { adminLogout } from '../Redux/Admin/action'
@@ -71,7 +71,7 @@ export default function Navbar(props) {
   };
 
   const handleFormSubmit = () => {
-    if (name === 'admin') {
+    if (name === 'admin' && password === 'admin') {
       dispatch(adminLoginSuccess())
       history.push('/admin')
     }
@@ -129,6 +129,7 @@ export default function Navbar(props) {
                   type="button" class="btn btn-lg" onClick={() => handleLogout()}>
                   Admin Logout
                   </NavRightButtons>
+                <Link to='/admin'>Go To Dashboard</Link>
               </div>}
             {isUserAuth && !isAdminAuth &&
               <div>
@@ -136,6 +137,8 @@ export default function Navbar(props) {
                   type="button" class="btn btn-lg" onClick={() => handleLogout()}>
                   User Logout
                   </NavRightButtons>
+
+                <Link to='/user' style={{ color: "red" }}><i>Go To Dashboard</i></Link>
               </div>}
           </NavRightContainerItem>
         </NavRightContainer>
