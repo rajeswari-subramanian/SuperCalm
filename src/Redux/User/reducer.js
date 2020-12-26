@@ -1,9 +1,10 @@
-import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT } from './actionTypes'
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT, USER_STATS_SHOW } from './actionTypes'
 import { saveData, loadData, clearData } from "../LocalStorage";
 
 const initStore = {
     isUserAuth: loadData('isUserAuth') || false,
-    userName: "",
+    userName: loadData('userName') || '',
+    userStatsShow: true,
     isError: false,
 };
 const userReducer = (state = initStore, { type, payload }) => {
@@ -14,6 +15,7 @@ const userReducer = (state = initStore, { type, payload }) => {
             };
         case USER_LOGIN_SUCCESS:
             saveData('isUserAuth', true);
+            saveData('userName', payload);
             return {
                 ...state,
                 isUserAuth: true,
@@ -27,7 +29,14 @@ const userReducer = (state = initStore, { type, payload }) => {
         case USER_LOGOUT:
             clearData();
             return {
+                ...state,
                 isUserAuth: false,
+                userStatsShow: true,
+            };
+        case USER_STATS_SHOW:
+            return {
+                ...state,
+                userStatsShow: false,
             };
         default:
             return { ...state };
