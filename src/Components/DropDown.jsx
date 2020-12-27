@@ -20,10 +20,8 @@ const MonthButtons = styled.div`
   cursor:pointer;  
   color: white;
   padding: 20px;  
-  border-radius: 35px;
-  &:hover {
-    background:rgb(0,0,0,0.2);
-  }
+  border-radius: 35px; 
+  background:rgb(0,0,0,0.2);  
 `;
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -67,7 +65,7 @@ export default function DropDown() {
     return (
         <div>
             <MonthButtons onClick={handleClickOpen} type="button" class="btn btn-lg">
-                Open Select Period Dialog</MonthButtons>
+                Select Period Stats</MonthButtons>
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
                 <DialogTitle>Select start and end date</DialogTitle>
                 <DialogContent>
