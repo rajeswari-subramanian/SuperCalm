@@ -40,7 +40,7 @@ const SPAN = styled.span`
     padding:14px;
 `;
 
-const FooterCopyright=styled.p`
+const FooterCopyright = styled.p`
    color: #B5B5B5;
    margin: 20px;
    flex-basis: 100%
@@ -57,22 +57,22 @@ export default function Footer() {
                     About
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Careers
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Press
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Blog
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Meet our Instructor
                 </FooterItems>
                 <FooterItems>
-                    About
+                    Calm Science
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Brand Partnerships
                 </FooterItems>
             </FooterColumns>
             <FooterColumns>
@@ -80,33 +80,33 @@ export default function Footer() {
                     Offers
                     </FooterTitle>
                 <FooterItems>
-                    About
+                    Buy a Gift
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Redeem a Gift
                     </FooterItems>
                 <FooterItems>
-                    About
-                    </FooterItems>               
+                    Calm for Business
+                    </FooterItems>
             </FooterColumns>
             <FooterColumns>
                 <FooterTitle>
                     Help
                     </FooterTitle>
                 <FooterItems>
-                    About
+                    FAQ
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Contact Us
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Terms
                 </FooterItems>
                 <FooterItems>
-                    About
+                    Privacy
                     </FooterItems>
                 <FooterItems>
-                    About
+                    Cookies
                 </FooterItems>
             </FooterColumns>
             <FooterColumns basis="10%">
@@ -117,8 +117,8 @@ export default function Footer() {
                 </div>
             </FooterColumns>
             <FooterCopyright>
-            Copyright © 2020 Calm. All rights reserved
-            </FooterCopyright> 
+                Copyright © 2020 Calm. All rights reserved
+            </FooterCopyright>
         </FooterContainer>
     );
 }
