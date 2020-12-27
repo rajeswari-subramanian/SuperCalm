@@ -10,7 +10,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 
 const NavContainer = styled.div`
-  background:${(props) => (props.color ? props.color : null)} ;
+  background:${(props) => (props.position > 150 ? "white" : null)} ;
   display: flex;
   padding-top: ${(props) => (props.pad ? props.pad : "80px")} ;
   z-index: 999;
@@ -39,7 +39,7 @@ flex-basis:${(props) => (props.basis ? props.basis : null)} ;
 
 const NavRightButtons = styled.div`
   font-size: 18px;
-  color: white;
+  color: ${(props) => (props.position > 150 ? "black" : "white")} ;
   padding: 20px;  
   border-radius: 35px;
   &:hover {
@@ -47,10 +47,10 @@ const NavRightButtons = styled.div`
   }
 `;
 const CalmButton = styled.div`
-border: 3px solid white;
+    border: ${(props) => (props.position > 150 ? "3px solid black" : "3px solid white")} ;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
-    color:white;  
+    color:${(props) => (props.position > 150 ? "black" : "white")} ; 
     font-weight: bold;  
     border-radius:35px; 
     &:hover {
@@ -91,13 +91,13 @@ export default function Navbar(props) {
 
   return (
     <>
-      <NavContainer pad={`${props.pad}`} color={`${props.color}`}>
+      <NavContainer pad={`${props.pad}`} position={`${props.position}`}>
         <NavLeftContainer>
           <img
             width="100px"
             height="40px"
             alt=""
-            src="/logo.png"
+            src={props.position > 150 ? "/calm-blue-logo.png" : "/logo.png"}
             onClick={handleHome}
           />
         </NavLeftContainer>
@@ -106,12 +106,13 @@ export default function Navbar(props) {
             {!isAdminAuth && !isUserAuth &&
               <>
                 <NavRightItems basis="30%">
-                  <NavRightButtons type="button" class="btn btn-lg ">
+                  <NavRightButtons position={`${props.position}`} type="button" class="btn btn-lg ">
                     For Business
                   </NavRightButtons>
                 </NavRightItems>
                 <NavRightItems basis="18%">
                   <NavRightButtons
+                    position={`${props.position}`}
                     data-toggle="modal"
                     data-target="#myModal"
                     type="button" class="btn btn-lg" >
@@ -119,7 +120,7 @@ export default function Navbar(props) {
                     </NavRightButtons>
                 </NavRightItems>
                 <NavRightItems basis="40%">
-                  <CalmButton type="button" class="btn btn-lg">Try Calm for Free
+                  <CalmButton position={`${props.position}`} type="button" class="btn btn-lg">Try Calm for Free
                     </CalmButton>
                 </NavRightItems>
               </>}
