@@ -1,9 +1,10 @@
-import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT, USER_STATS_SHOW } from './actionTypes'
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT, USER_STATS_SHOW, USER_WEEK } from './actionTypes'
 import { saveData, loadData, clearData } from "../LocalStorage";
 
 const initStore = {
     isUserAuth: loadData('isUserAuth') || false,
     userName: loadData('userName') || '',
+    weekName: loadData('weekName') || 'Week 1',
     userStatsShow: true,
     isError: false,
 };
@@ -37,6 +38,12 @@ const userReducer = (state = initStore, { type, payload }) => {
             return {
                 ...state,
                 userStatsShow: false,
+            };
+        case USER_WEEK:
+            saveData('weekName', payload);
+            return {
+                ...state,
+                weekName: payload,
             };
         default:
             return { ...state };
