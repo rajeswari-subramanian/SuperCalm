@@ -70,6 +70,10 @@ const chartConfig = (props) => {
         options: {
             legend: {
                 display: false,
+                labels: {
+                    fontColor: '#1D3454',
+                    fontSize: 18
+                }
             },
             scales: {
                 xAxes: [
@@ -80,7 +84,7 @@ const chartConfig = (props) => {
                             display: true,
                             fontSize: 20,
                             fontColor: '#1D3454',
-                            labelString: "Number of Users",
+                            labelString: "Number of Users (6)",
                         },
                         ticks: {
                             stepSize: 1
@@ -102,7 +106,7 @@ const chartConfig = (props) => {
                 display: true,
                 fontSize: 20,
                 fontColor: '#1D3454',
-                text: `Happiness and Unhappiness Distribution of All Users in a Day`
+                text: `Happiness and Unhappiness Distribution of All Users`
             },
         }
 
