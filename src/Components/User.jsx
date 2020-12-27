@@ -104,13 +104,13 @@ function User() {
                 </SideDivItems>
                 <SideDivItems onClick={() => handleMonth()}>
                     <SideDivIcon><EqualizerOutlinedIcon /> </SideDivIcon>
-                    <SideDivText>Month Stats</SideDivText>
+                    <SideDivText>Periodical Stats</SideDivText>
                 </SideDivItems>
                 <SideDivItems onClick={() => handleLogout()}>
                     <SideDivIcon><AccountCircleOutlinedIcon /> </SideDivIcon>
                     <SideDivText>Logout</SideDivText>
                 </SideDivItems>
-                <p style={{ fontSize: "20px", color: "white" }}>Logged in as: {userName}</p>
+                <p style={{ fontSize: "20px", color: "white" }}>Logged in as: <span style={{ fontSize: "30px", fontStyle: "italic" }}>{userName}</span></p>
             </SideDiv>
             <BodyDiv>
                 {showWeek && !showMonth && <Week />}
