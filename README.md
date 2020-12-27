@@ -21,4 +21,3 @@ A simple app that allows you to record your mood within the application on a dai
 - Now.sh
 - Chart.js
 - FontAwesome
->>>>>>> 22b0738a2ec2c427f164fc98babd538283fc47a6
