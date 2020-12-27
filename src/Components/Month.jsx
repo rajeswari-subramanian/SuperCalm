@@ -9,8 +9,8 @@ function Month() {
 
     return (
         <>
+            {userStatsShow && <h1 style={{ color: "white" }}>Welcome<span style={{ fontSize: "30px", fontStyle: "italic" }}></span> {userName}</h1>}
             <DropDown />
-            {userStatsShow && <h1 style={{ color: "white" }}>Welcome {userName}</h1>}
             {!userStatsShow && <div style={{ borderRadius: "25px", background: "rgb(186,195,206,0.8)", width: "100%", height: "50%" }}>
                 <ThirdPieCharts />
             </div>}
