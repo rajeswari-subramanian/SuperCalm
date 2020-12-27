@@ -75,7 +75,7 @@ export default function Navbar(props) {
       dispatch(adminLoginSuccess())
       history.push('/admin')
     }
-    else {
+    else if (name === 'raji' && password === 'raji') {
       dispatch(userLoginSuccess(name))
       history.push('/user')
     }
