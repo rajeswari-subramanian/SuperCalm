@@ -1,40 +1,27 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import FirstLineCharts from "./FirstLineCharts";
 import user from "../user.json";
-
-const WeekButtons = styled.div`
-  font-size: 18px;
-  cursor: pointer;
-  color: white;
-  padding: 20px;
-  border-radius: 35px;
-  &:hover {
-    background: rgb(0, 0, 0, 0.2);
-  }
-`;
+import WeekButtons from './WeekButtons'
 
 function Week() {
+    const weekName = useSelector(state => state.user.weekName)
     const [week, setWeek] = useState(user[0].moodTrends.week1[1].value);
 
-    const handleWeek = (item) => {
-        if (item === "Week1") setWeek(user[0].moodTrends.week1[1].value);
-        else if (item === "Week2") setWeek(user[0].moodTrends.week2[1].value);
-        else if (item === "Week3") setWeek(user[0].moodTrends.week3[1].value);
-        else if (item === "Week4") setWeek(user[0].moodTrends.week4[1].value);
-    };
+    useEffect(() => {
+        if (weekName === "Week 1") setWeek(user[0].moodTrends.week1[1].value);
+        else if (weekName === "Week 2") setWeek(user[0].moodTrends.week2[1].value);
+        else if (weekName === "Week 3") setWeek(user[0].moodTrends.week3[1].value);
+        else if (weekName === "Week 4") setWeek(user[0].moodTrends.week4[1].value);
+        else if (weekName === "Week 5") setWeek(user[0].moodTrends.week5[1].value);
+    }, [weekName, week])
+
+
     return (
         <>
             <div style={{ display: "flex", fontWeight: "bolder" }}>
-                {["Week1", "Week2", "Week3", "Week4"].map((item, i) => (
-                    <WeekButtons
-                        onClick={() => handleWeek(item)}
-                        key={i}
-                        type="button"
-                        class="btn btn-lg"
-                    >
-                        {item}
-                    </WeekButtons>
+                {["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"].map((item, i) => (
+                    <WeekButtons item={item} i={i} />
                 ))}
             </div>
             <div
@@ -67,5 +54,6 @@ function Week() {
         </>
     );
 }
+
 
 export default Week;
