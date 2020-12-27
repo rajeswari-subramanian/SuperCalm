@@ -1,11 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+# https://super-calm.rajeswari-subramanian.vercel.app
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
 .env
 user.json
+admin.json
+month.json
 # testing
 /coverage
 
