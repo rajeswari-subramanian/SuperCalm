@@ -6,6 +6,8 @@ A simple app that allows you to record your mood within the application on a dai
 ![Login-Page](./public/login.PNG)
 ### SingleUser-Stats
 ![User-Page](./public/user.PNG)
+### SingleUser-PeriodicStats
+![User-Page](./public/period.PNG)
 ### MultipleUser-Stats
 ![Admin-Page](./public/admin.PNG)
 ### Technology stack
