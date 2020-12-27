@@ -65,15 +65,6 @@ const chartConfig = (props) => {
 const FirstLineCharts = (props) => {
     const chartContainer = useRef(null);
     const [chartInstance, setChartInstance] = useState(null);
-    // const updateDataset = (datasetIndex, newData) => {
-    //     chartInstance.data.datasets[datasetIndex].data = newData;
-    //     chartInstance.update();
-    // };
-
-    // const onButtonClick = () => {
-    //     const data = [1, 2, 3, 4, 5, 6];
-    //     updateDataset(0, data);
-    // };
     useEffect(() => {
         if (chartContainer && chartContainer.current) {
             const newChartInstance = new Chartjs(chartContainer.current, chartConfig(props));

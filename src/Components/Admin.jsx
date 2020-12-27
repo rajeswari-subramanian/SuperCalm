@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
@@ -89,7 +89,6 @@ function Admin() {
     let sad = {};
     let aggregate = [];
 
-
     const handleMonths = (item) => {
         if (item === "Day") setMonths(month[0].day);
         else if (item === "Month 1") setMonths(month[1].month1);
@@ -112,6 +111,7 @@ function Admin() {
         alert("Notications Sent to All Users");
         setShowBtn(false)
     };
+    //FIND AGGREGATE OF USER MOOD OVER THE PERIOD OF 1,3,6 MONTHS USING REDUCE METHOD
     useEffect(() => {
         for (let i = 0; i < admin.length; i++) {
             sadWindow(admin[i]);
@@ -129,10 +129,10 @@ function Admin() {
                 setAggregate2(Number(key));
             }
         }
+        //AGGREGATE1,2 FOR 2 HOUR WINDOW
         aggregate.push(aggregate1);
         aggregate.push(aggregate2);
         aggregate.sort((a, b) => a - b);
-
         if (aggregate1 && aggregate2) {
             setMsg(
                 `Most of the Users are unhappy at ${aggregate[0]} to ${aggregate[1]} time window`
