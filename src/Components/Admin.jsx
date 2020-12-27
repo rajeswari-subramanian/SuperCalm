@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { useHistory, Link } from "react-router-dom";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
@@ -9,6 +9,7 @@ import { adminLogout } from "../Redux/Admin/action";
 import SecondScatterCharts from "./SecondScatterCharts";
 import admin from "../admin.json";
 import month from '../month.json'
+
 
 const SideDiv = styled.div`
   z-index: 100;
@@ -75,7 +76,7 @@ font-weight: bolder;
 padding: 10px 105px 10px 105px;
 color: white;
 border-radius: 25px;
-background: linear-gradient(green, red)
+background: linear-gradient(lightblue, blue)
 `;
 function Admin() {
     const dispatch = useDispatch();
@@ -91,9 +92,9 @@ function Admin() {
 
     const handleMonths = (item) => {
         if (item === "Day") setMonths(month[0].day);
-        else if (item === "1Month") setMonths(month[1].month1);
-        else if (item === "3Months") setMonths(month[2].month3);
-        else if (item === "6Months") setMonths(month[3].month6);
+        else if (item === "Month 1") setMonths(month[1].month1);
+        else if (item === "Months 3") setMonths(month[2].month3);
+        else if (item === "Months 6") setMonths(month[3].month6);
     };
     const handleLogout = () => {
         dispatch(adminLogout());
@@ -122,7 +123,7 @@ function Admin() {
                 })
             )
         );
-        let [keyPrev, keyNext] = [Number(aggregate1) - 1, Number(aggregate1) + 1];
+        let [keyPrev, keyNext] = [Number(aggregate1) - 2, Number(aggregate1) + 2];
         for (let key in sad) {
             if (key === keyPrev.toString() || key === keyNext.toString()) {
                 setAggregate2(Number(key));
@@ -179,11 +180,11 @@ function Admin() {
                     </SideDivIcon>
                     <SideDivText>Logout</SideDivText>
                 </SideDivItems>
-                <p style={{ fontSize: "20px", color: "white" }}>Logged in as: admin</p>
+                <p style={{ fontSize: "20px", color: "white" }}>Logged in as: <span style={{ fontSize: "30px", fontStyle: "italic" }}> Admin</span></p>
             </SideDiv>
             <BodyDiv>
                 <div style={{ display: "flex", fontWeight: "bolder" }}>
-                    {["Day", "1Month", "3Months", "6Months"].map((item, i) => (
+                    {["Day", "Month 1", "Months 3", "Months 6"].map((item, i) => (
                         <MonthButtons
                             onClick={() => handleMonths(item)}
                             key={i}
@@ -194,18 +195,17 @@ function Admin() {
                         </MonthButtons>
                     ))}
                 </div>
-
                 <div
                     style={{
                         position: "absolute",
-                        fontSize: "40px",
-                        top: "210px",
-                        left: "120px",
+                        fontSize: "20px",
+                        top: "470px",
+                        left: "240px",
                     }}
                 >
-                    <div style={{ display: "flex", flexDirection: "column" }}>
-                        <i style={{ color: "green", marginBottom: "70px" }} class="far fa-smile"></i>
-                        <i style={{ color: "red" }} class="far fa-frown"></i>
+                    <div style={{ display: "flex" }}>
+                        <i style={{ color: "green", marginRight: "25px" }} class="fas fa-square">Happy</i>
+                        <i style={{ color: "red" }} class="fas fa-square">Sad</i>
                     </div>
                 </div>
                 <div
